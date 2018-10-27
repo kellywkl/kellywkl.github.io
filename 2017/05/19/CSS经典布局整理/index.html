@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="三栏式布局 涉及浮动和清除浮动，主要讲解“圣杯”和“双飞翼”两种解决方法。这两种方法实现的都是三栏布局，两边的盒子宽度固定，中间盒子自适应，它们实现的效果是一样的，差别在于其实现的思想。  圣杯布局 圣杯：父盒子包含三个子盒子（左，中，右）  中间盒子的宽度设置为 width: 100%; 独占一行； 使用负边距(均是 margin-left)把左右两边的盒子都拉上去和中间盒子同一行；.left">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS经典布局整理">
+<meta property="og:url" content="https://kellyblog.site/2017/05/19/CSS经典布局整理/index.html">
+<meta property="og:site_name" content="kelly文档库">
+<meta property="og:description" content="三栏式布局 涉及浮动和清除浮动，主要讲解“圣杯”和“双飞翼”两种解决方法。这两种方法实现的都是三栏布局，两边的盒子宽度固定，中间盒子自适应，它们实现的效果是一样的，差别在于其实现的思想。  圣杯布局 圣杯：父盒子包含三个子盒子（左，中，右）  中间盒子的宽度设置为 width: 100%; 独占一行； 使用负边距(均是 margin-left)把左右两边的盒子都拉上去和中间盒子同一行；.left">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://kellyblog.site/images/20170520-1.png">
+<meta property="og:image" content="https://kellyblog.site/images/20170520-2.png">
+<meta property="og:image" content="https://kellyblog.site/images/20170520-3.png">
+<meta property="og:updated_time" content="2017-05-20T02:38:29.611Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS经典布局整理">
+<meta name="twitter:description" content="三栏式布局 涉及浮动和清除浮动，主要讲解“圣杯”和“双飞翼”两种解决方法。这两种方法实现的都是三栏布局，两边的盒子宽度固定，中间盒子自适应，它们实现的效果是一样的，差别在于其实现的思想。  圣杯布局 圣杯：父盒子包含三个子盒子（左，中，右）  中间盒子的宽度设置为 width: 100%; 独占一行； 使用负边距(均是 margin-left)把左右两边的盒子都拉上去和中间盒子同一行；.left">
+<meta name="twitter:image" content="https://kellyblog.site/images/20170520-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://kellyblog.site/2017/05/19/CSS经典布局整理/">
+
+
+
+
+
+  <title>CSS经典布局整理 | kelly文档库</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1bdbcff6900e964d450db86837e9b447";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">kelly文档库</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://kellyblog.site/2017/05/19/CSS经典布局整理/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kelly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="kelly文档库">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS经典布局整理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-19T09:57:00+08:00">
+                2017-05-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="三栏式布局"><a href="#三栏式布局" class="headerlink" title="三栏式布局"></a>三栏式布局</h4><blockquote>
+<p>涉及浮动和清除浮动，主要讲解“圣杯”和“双飞翼”两种解决方法。这两种方法实现的都是三栏布局，两边的盒子宽度固定，中间盒子自适应，它们实现的效果是一样的，差别在于其实现的思想。</p>
+</blockquote>
+<h5 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h5><blockquote>
+<p>圣杯：父盒子包含三个子盒子（左，中，右）</p>
+<ul>
+<li>中间盒子的宽度设置为 width: 100%; 独占一行；</li>
+<li>使用负边距(均是 margin-left)把左右两边的盒子都拉上去和中间盒子同一行；<p>.left {margin-left:-100%;} 把左边的盒子拉上去</p><br><p>.right {margin-left：-右边盒子宽度px;} 把右边的盒子拉上去</p></li>
+<li>父盒子设置左右的 padding 来为左右盒子留位置；</li>
+<li>对左右盒子使用相对布局来占据 padding 的空白，避免中间盒子的内容被左右盒子覆盖；<br><img src="/images/20170520-1.png" alt="alt text" title="圣杯布局"></li>
+</ul>
+</blockquote>
+<h5 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h5><blockquote>
+<p>双飞翼：父盒子包含三个子盒子（左，中，右），中间的子盒子里再加一个子盒子。</p>
+<ul>
+<li>中间盒子的宽度设置为 width: 100%; 独占一行；</li>
+<li>使用负边距(均是 margin-left)把左右两边的盒子都拉上去和中间盒子同一行；</li>
+<li>在中间盒子里面再添加一个 div，然后对这个 div 设置 margin-left 和 margin-right来为左右盒子留位置；<br><img src="/images/20170520-2.png" alt="alt text" title="双飞翼布局"></li>
+</ul>
+</blockquote>
+<h5 id="圣杯和双飞翼异同"><a href="#圣杯和双飞翼异同" class="headerlink" title="圣杯和双飞翼异同"></a>圣杯和双飞翼异同</h5><blockquote>
+<p>圣杯布局和双飞翼布局解决的问题是一样的，都是两边定宽，中间自适应的三栏布局，中间栏要在放在文档流前面以优先渲染。</p>
+<ul>
+<li>两种方法基本思路都相同：首先让中间盒子 100% 宽度占满同一高度的空间，在左右两个盒子被挤出中间盒子所在区域时，使用 margin-left 的负值将左右两个盒子拉回与中间盒子同一高度的空间。接下来进行一些调整避免中间盒子的内容被左右盒子遮挡。</li>
+<li>主要区别在于 如何使中间盒子的内容不被左右盒子遮挡：<br><p>1. 圣杯布局的方法：设置父盒子的 padding 值为左右盒子留出空位，再利用相对布局对左右盒子调整位置占据 padding 出来的空位；</p><br><p>2. 双飞翼布局的方法：在中间盒子里再增加一个子盒子，直接设置这个子盒子的 margin 值来让出空位，而不用再调整左右盒子。</p><br>简单说起来就是双飞翼布局比圣杯布局多创建了一个 div，但不用相对布局了，少设置几个属性。</li>
+</ul>
+</blockquote>
+<h5 id="利用浮动实现"><a href="#利用浮动实现" class="headerlink" title="利用浮动实现"></a>利用浮动实现</h5><blockquote>
+<p>我自己使用浮动也实现了三栏式布局：左边盒子左浮动，右边盒子右浮动，中间盒子利用 margin-left 和 margin-right 来为左右盒子留位置，同时父盒子设置 overflow: auto; 来避免子盒子溢出。<br><img src="/images/20170520-3.png" alt="alt text" title="利用浮动实现"><br>三栏式布局参考下面几个链接:</p>
+<ul>
+<li><p>  <a href="http://www.w3cplus.com/blog/104.html" target="_blank" rel="noopener">CSS三栏布局——中间固定两边自适应宽度</a>： w3cplus 的文章，使用了双飞翼和浮动实现两侧定宽、中间自适应，也实现了两侧自适应、中间定宽</p></li>
+<li><p>  <a href="http://www.jianshu.com/p/f9bcddb0e8b4" target="_blank" rel="noopener">简书 - 圣杯布局和双飞翼布局（前端面试必看）</a>：只讲了圣杯，不过特别详细</p></li>
+<li><p>  <a href="https://alistapart.com/article/holygrail" target="_blank" rel="noopener">In Search of the Holy Grail</a>：圣杯布局的来源<br>[百度前端学院笔记 - 三栏式布局之双飞翼与圣杯]</p></li>
+<li><p>  (<a href="http://ife.baidu.com/note/detail/id/1025)：百度前端学院学员的前端学习笔记" target="_blank" rel="noopener">http://ife.baidu.com/note/detail/id/1025)：百度前端学院学员的前端学习笔记</a></p>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>三栏式布局涉及到负 magin 和 清除浮动的问题。</p>
+</blockquote>
+<h5 id="负-magin"><a href="#负-magin" class="headerlink" title="负 magin"></a>负 magin</h5><blockquote>
+<p>这里引出了“负 margin”的问题：</p>
+<ul>
+<li><a href="https://www.w3cplus.com/css/the-definitive-guide-to-using-negative-margins.html" target="_blank" rel="noopener">负margin用法权威指南</a>：<a href="https://www.smashingmagazine.com/2009/07/the-definitive-guide-to-using-negative-margins/" target="_blank" rel="noopener">The Definitive Guide to Using Negative Margins</a> 的译文,介绍了负 magin 的一些性质和很多实用技巧</li>
+<li><a href="http://www.jianshu.com/p/549aaa5fabaa" target="_blank" rel="noopener">简书 - margin为负值产生的影响和常见布局应用</a>：包括对自身的影响，对文档流的影响，以及一些在布局中的应用技巧(比如去除列表右边框，负边距+定位实现水平垂直居中，去除列表最后一个 li 元素的 border-bottom，多列等高)</li>
+<li><a href="http://www.cnblogs.com/2050/archive/2012/08/13/2636467.html" target="_blank" rel="noopener">博客园 - CSS布局奇淫巧计之-强大的负边距</a>：和上文内容差不多</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>简单总结几点：</p>
+<ol>
+<li>不使用 float 的话，负 margin 元素是不会破坏页面的文档流。所以如果你使用负 margin 上移一个元素，所有跟随的元素都会被上移(而 relative 定位的元素则不同，会保留原位置，影响文档流)。</li>
+<li>当 static 元素的 margin-top/margin-left 被赋予负值时，元素将被拉进指定的方向。</li>
+<li>如果你设置 margin-bottom/right 为负数，元素并不会如你所想的那样向下/右移动，而是将后续的元素拖拉进来，覆盖本来的元素。</li>
+<li>当元素不存在 width 属性或者 width: auto<br>的时候，负 margin 会增加元素的宽度.</li>
+<li>margin-top 为负值不会增加高度，只会产生向上位移;margin-bottom 为负值不会产生位移，会减少自身的供 CSS 读取的高度，影响下方的元素位置；上下相邻的元素两者均为负时，效果不叠加，取负值更多的那个效果。</li>
+</ol>
+</blockquote>
+<h5 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h5><blockquote>
+<p>清除浮动主要是为了解决高度塌陷问题。而简单的 clear: both<br> 并不能解决这个问题，所以引出了许多解决方案。<br><a href="http://stackoverflow.com/questions/211383/what-methods-of-clearfix-can-i-use" target="_blank" rel="noopener">StackOverflow - What methods of ‘clearfix’ can I use?</a>：清除浮动黑科技完整解读<br> <a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="noopener">那些年我们一起清除过的浮动</a>：神文，把“清除浮动”定义为“闭合浮动”，把问题由来和解决方案都讲清楚了，并且分析了各种解决方案的优劣。</p>
+</blockquote>
+<blockquote>
+<p>各种解决方案在上面的链接里有很详细的说明了，这里就不赘述了。大体分为两类：</p>
+<ol>
+<li>其一，通过在浮动元素的末尾添加一个空元素，设置 clear: both<br>属性，after 伪元素其实也是通过 content 在元素的后面生成了内容为一个点的块级元素；</li>
+<li>其二，通过设置父元素 overflow<br>或者 display: table<br>属性来闭合浮动</li>
+</ol>
+</blockquote>
+<blockquote>
+<p><em>顺便补充一句，clear float(例如 clear: left) 是对某个元素设置，以避免其某一边有浮动元素，即对当前元素产生约束，约束的边界为其他的浮动元素。对于已经浮动的元素，设置 clear float 是无效的。</em></p>
+</blockquote>
+<h5 id="居中布局"><a href="#居中布局" class="headerlink" title="居中布局"></a>居中布局</h5><blockquote>
+<ul>
+<li><a href="https://css-tricks.com/centering-css-complete-guide/" target="_blank" rel="noopener">Centering in CSS: A Complete Guide</a>：非常全面的居中定位博客，包括各种情况下的水平居中，垂直居中和水平垂直居中方案。有展示示例及相应的 HTML 和 CSS 代码<br>文章大致结构：<ul>
+<li>水平居中对于行内元素(inline)：text-align: center;</li>
+<li>对于块级元素(block)：设置宽度且 marigin-left<br>和 margin-right<br>是设成 auto</li>
+<li>对于多个块级元素：对父元素设置 text-align: center;<br>，对子元素设置 display: inline-block;<br>；或者使用 flex 布局</li>
+</ul>
+</li>
+<li>垂直居中<ul>
+<li>对于行内元素(inline)<ul>
+<li>单行：设置上下 pandding 相等；或者设置 line-height<br>和 height<br>相等</li>
+<li>多行：设置上下 pandding 相等；或者设置 display: table-cell;<br>和 vertical-align: middle;<br>；或者使用 flex 布局；或者使用伪元素</li>
+</ul>
+</li>
+<li>对于块级元素(block)：下面前两种方案，父元素需使用相对布局<ul>
+<li>已知高度：子元素使用绝对布局 top: 50%;<br>，再用负的 margin-top<br>把子元素往上拉一半的高度</li>
+<li>未知高度：子元素使用绝对布局 position: absolute; top: 50%; transform: translateY(-50%);</li>
+<li>使用 Flexbox：选择方向，justify-content: center;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>水平垂直居中<ul>
+<li>定高定宽：先用绝对布局 top: 50%; left: 50%;<br>，再用和宽高的一半相等的负 margin 把子元素回拉</li>
+<li>高度和宽度未知：先用绝对布局 top: 50%; left: 50%;<br>，再设置 transform: translate(-50%, -50%);</li>
+<li>使用 Flexbox：justify-content: center; align-items: center;</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h6 id="响应式设计"><a href="#响应式设计" class="headerlink" title="响应式设计"></a>响应式设计</h6><blockquote>
+<p>“响应式设计（Responsive Design)” 是一种让网站针对不同的浏览器和设备“呈现”不同显示效果的策略。<br>媒体查询(Media Queries)是做此事所需的最强大的工具。<br>注： Responsive Web Design ＝ RWD，Adaptive Web Design ＝ AWD<br>RWD：</p>
+<ul>
+<li>采用 CSS 的 media query 技术</li>
+<li>流体布局（fluid grids）</li>
+<li>自适应的图片/视频等资源素材<br>（为小、中、大屏幕做一些优化，目的是让任何尺寸的屏幕空间都能得到充分利用）</li>
+</ul>
+</blockquote>
+<p>AWD：</p>
+<ul>
+<li>CSS media query 技术（仅针对有限几种预设的屏幕尺寸设计）</li>
+<li>用 JavaScript 来操作 HTML 内容</li>
+<li>在服务器端操作 HTML 内容（比如为移动端减少内容，为桌面端提供更多内容）</li>
+</ul>
+<h5 id="Flexbox-布局"><a href="#Flexbox-布局" class="headerlink" title="Flexbox 布局"></a>Flexbox 布局</h5><blockquote>
+<p>Flexbox 布局参考下面几篇文章就可以了，几篇文章大同小异，看一两篇就知道大概了，讲的挺详细的，在此不赘述</p>
+<ul>
+<li><a href="http://www.w3cplus.com/css3/a-guide-to-flexbox.html" target="_blank" rel="noopener">w3cplus - 一个完整的Flexbox指南</a>：<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener">A Complete Guide to Flexbox</a> 的译文</li>
+<li><a href="https://segmentfault.com/a/1190000002910324" target="_blank" rel="noopener">SegmentFault - Flexbox详解</a></li>
+<li><a href="https://www.w3cplus.com/css3/a-visual-guide-to-css3-flexbox-properties.html" target="_blank" rel="noopener">w3cplus - 图解CSS3 Flexbox属性</a></li>
+<li><a href="http://www.w3cplus.com/css3/flexbox-basics.html" target="_blank" rel="noopener">w3cplus - Flexbox——快速布局神器</a></li>
+</ul>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wechat-qcode.jpg" alt="kelly wechat" style="width: 200px; max-width: 100%;">
+    <div>订阅我的博客扫描我的公共微信帐户</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wx-qrcode.png" alt="kelly 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zfb-qrcode.jpg" alt="kelly 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/01/win-server2012上发布C-WebApi项目时遇到的问题/" rel="next" title="Win Server2012上发布C# WebApi项目时遇到的问题">
+                <i class="fa fa-chevron-left"></i> Win Server2012上发布C# WebApi项目时遇到的问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/23/js、-jquery调用iframe父窗口与子窗口元素的方法/" rel="prev" title="js、 jquery调用iframe父窗口与子窗口元素的方法">
+                js、 jquery调用iframe父窗口与子窗口元素的方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="kelly">
+            
+              <p class="site-author-name" itemprop="name">kelly</p>
+              <p class="site-description motion-element" itemprop="description">好记性不如烂笔头</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#三栏式布局"><span class="nav-number">1.</span> <span class="nav-text">三栏式布局</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#圣杯布局"><span class="nav-number">1.1.</span> <span class="nav-text">圣杯布局</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#双飞翼布局"><span class="nav-number">1.2.</span> <span class="nav-text">双飞翼布局</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#圣杯和双飞翼异同"><span class="nav-number">1.3.</span> <span class="nav-text">圣杯和双飞翼异同</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#利用浮动实现"><span class="nav-number">1.4.</span> <span class="nav-text">利用浮动实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#负-magin"><span class="nav-number">1.5.</span> <span class="nav-text">负 magin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#清除浮动"><span class="nav-number">1.6.</span> <span class="nav-text">清除浮动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#居中布局"><span class="nav-number">1.7.</span> <span class="nav-text">居中布局</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#响应式设计"><span class="nav-number">1.7.1.</span> <span class="nav-text">响应式设计</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Flexbox-布局"><span class="nav-number">1.8.</span> <span class="nav-text">Flexbox 布局</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kelly</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

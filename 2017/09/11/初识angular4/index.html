@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="angular,">
 
 
 
@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="一、搭建环境 angular命令行工具安装：cnpm install -g @angular/cli安装完成后可通过：ng -v 查看其版本  二、创建项目 ng new ng4demo [ng4demo为项目名称]cd ng4democnpm installng serve –open这样我们的项目就可以运行起来了  三、第三方库安装和引入1、jquery、bootstrap安装  2、安装完成">
+<meta name="keywords" content="angular">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://kellyblog.site/2018/10/25/hello-world/index.html">
+<meta property="og:title" content="初识angular4">
+<meta property="og:url" content="https://kellyblog.site/2017/09/11/初识angular4/index.html">
 <meta property="og:site_name" content="kelly文档库">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="一、搭建环境 angular命令行工具安装：cnpm install -g @angular/cli安装完成后可通过：ng -v 查看其版本  二、创建项目 ng new ng4demo [ng4demo为项目名称]cd ng4democnpm installng serve –open这样我们的项目就可以运行起来了  三、第三方库安装和引入1、jquery、bootstrap安装  2、安装完成">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-25T15:33:40.241Z">
+<meta property="og:image" content="http://ov17jd456.bkt.clouddn.com/ng4demo-01.png">
+<meta property="og:updated_time" content="2017-09-11T09:14:20.354Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="初识angular4">
+<meta name="twitter:description" content="一、搭建环境 angular命令行工具安装：cnpm install -g @angular/cli安装完成后可通过：ng -v 查看其版本  二、创建项目 ng new ng4demo [ng4demo为项目名称]cd ng4democnpm installng serve –open这样我们的项目就可以运行起来了  三、第三方库安装和引入1、jquery、bootstrap安装  2、安装完成">
+<meta name="twitter:image" content="http://ov17jd456.bkt.clouddn.com/ng4demo-01.png">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://kellyblog.site/2018/10/25/hello-world/">
+  <link rel="canonical" href="https://kellyblog.site/2017/09/11/初识angular4/">
 
 
 
 
 
-  <title>Hello World | kelly文档库</title>
+  <title>初识angular4 | kelly文档库</title>
   
 
 
@@ -272,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kellyblog.site/2018/10/25/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://kellyblog.site/2017/09/11/初识angular4/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kelly">
@@ -289,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">初识angular4</h1>
         
 
         <div class="post-meta">
@@ -301,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-25T23:33:40+08:00">
-                2018-10-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-11T17:12:00+08:00">
+                2017-09-11
               </time>
             
 
@@ -370,15 +373,19 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h3 id="一、搭建环境"><a href="#一、搭建环境" class="headerlink" title="一、搭建环境"></a>一、搭建环境</h3><blockquote>
+<p>angular命令行工具安装：cnpm install -g @angular/cli<br>安装完成后可通过：ng -v 查看其版本</p>
+</blockquote>
+<h3 id="二、创建项目"><a href="#二、创建项目" class="headerlink" title="二、创建项目"></a>二、创建项目</h3><blockquote>
+<p>ng new ng4demo [ng4demo为项目名称]<br>cd ng4demo<br>cnpm install<br>ng serve –open<br>这样我们的项目就可以运行起来了</p>
+</blockquote>
+<h3 id="三、第三方库安装和引入"><a href="#三、第三方库安装和引入" class="headerlink" title="三、第三方库安装和引入"></a>三、第三方库安装和引入</h3><p>1、jquery、bootstrap安装</p>
+<p><img src="http://ov17jd456.bkt.clouddn.com/ng4demo-01.png" alt="安装jquery、bootstrap"></p>
+<p>2、安装完成后，修改.angular-cli.json的styles和scripts<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"apps"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"root"</span>: <span class="string">"src"</span>,</span><br><span class="line">      <span class="string">"outDir"</span>: <span class="string">"dist"</span>,</span><br><span class="line">      <span class="string">"assets"</span>: [</span><br><span class="line">        <span class="string">"assets"</span>,</span><br><span class="line">        <span class="string">"favicon.ico"</span></span><br><span class="line">      ],</span><br><span class="line">      <span class="string">"index"</span>: <span class="string">"index.html"</span>,</span><br><span class="line">      <span class="string">"main"</span>: <span class="string">"main.ts"</span>,</span><br><span class="line">      <span class="string">"polyfills"</span>: <span class="string">"polyfills.ts"</span>,</span><br><span class="line">      <span class="string">"test"</span>: <span class="string">"test.ts"</span>,</span><br><span class="line">      <span class="string">"tsconfig"</span>: <span class="string">"tsconfig.app.json"</span>,</span><br><span class="line">      <span class="string">"testTsconfig"</span>: <span class="string">"tsconfig.spec.json"</span>,</span><br><span class="line">      <span class="string">"prefix"</span>: <span class="string">"app"</span>,</span><br><span class="line">      <span class="string">"styles"</span>: [</span><br><span class="line">        <span class="string">"styles.css"</span>,</span><br><span class="line">        <span class="string">"../node_modules/bootstrap/dist/css/bootstrap.min.css"</span></span><br><span class="line">      ],</span><br><span class="line">      <span class="string">"scripts"</span>: [</span><br><span class="line">        <span class="string">"../node_modules/jquery/dist/jquery.min.js"</span>,</span><br><span class="line">        <span class="string">"../node_modules/bootstrap/dist/js/bootstrap.min.js"</span></span><br><span class="line">      ],</span><br><span class="line">      <span class="string">"environmentSource"</span>: <span class="string">"environments/environment.ts"</span>,</span><br><span class="line">      <span class="string">"environments"</span>: &#123;</span><br><span class="line">        <span class="string">"dev"</span>: <span class="string">"environments/environment.ts"</span>,</span><br><span class="line">        <span class="string">"prod"</span>: <span class="string">"environments/environment.prod.ts"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br></pre></td></tr></table></figure></p>
+<p>3、在src/styles.css中引入bootstrap样式<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* You can add global styles to this file, and also import other style files */</span></span><br><span class="line">@<span class="keyword">import</span> <span class="string">"../node_modules/bootstrap/dist/css/bootstrap.min.css"</span>;</span><br></pre></td></tr></table></figure></p>
+<p>4、在src/app/app.component.tsy引入jquery<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line">declare <span class="keyword">var</span> jquery:any;</span><br><span class="line">declare <span class="keyword">var</span> $ :any;</span><br><span class="line">@Component(&#123;</span><br><span class="line">  selector: <span class="string">'app-root'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./app.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./app.component.css'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">AppComponent</span> </span>&#123;</span><br><span class="line">  title = <span class="string">'app 初识ng4'</span>;</span><br><span class="line">  test() &#123;</span><br><span class="line">    $(<span class="string">".p1"</span>).text(<span class="string">"你好，世界！"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>至此，jquery和bootstrap就已经引入项目中，可以尽情的使用了。</p>
+<p>生成组件命令:ng g component header [header为组件名称]</p>
 
       
     </div>
@@ -431,6 +438,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/angular/" rel="tag"># angular</a>
+          
+        </div>
+      
 
       
       
@@ -440,8 +453,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/11/初识angular4/" rel="next" title="初识angular4">
-                <i class="fa fa-chevron-left"></i> 初识angular4
+              <a href="/2017/08/11/微信登陆二维码自定义样式/" rel="next" title="微信登陆二维码自定义样式">
+                <i class="fa fa-chevron-left"></i> 微信登陆二维码自定义样式
               </a>
             
           </div>
@@ -450,8 +463,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/26/hello-hexo/" rel="prev" title="hello hexo,我又来了">
-                hello hexo,我又来了 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/25/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -586,7 +599,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、搭建环境"><span class="nav-number">1.</span> <span class="nav-text">一、搭建环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、创建项目"><span class="nav-number">2.</span> <span class="nav-text">二、创建项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、第三方库安装和引入"><span class="nav-number">3.</span> <span class="nav-text">三、第三方库安装和引入</span></a></li></ol></div>
             
 
           </div>
