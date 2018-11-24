@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Javascript异步-Promise概念 Promise对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值。  语法1new Promise( function(resolve, reject) &amp;#123;...&amp;#125; /* Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和rej">
+<meta name="description" content="Javascript异步-Promise概念 Promise对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值。  语法12// Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和reject()，一个表示成功的回调，一个表示失败的回调。new Promise( function(resolv">
 <meta name="keywords" content="Javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript异步-Promise">
 <meta property="og:url" content="https://kellyblog.site/2018/11/24/Javascript异步/index.html">
 <meta property="og:site_name" content="kelly文档库">
-<meta property="og:description" content="Javascript异步-Promise概念 Promise对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值。  语法1new Promise( function(resolve, reject) &amp;#123;...&amp;#125; /* Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和rej">
+<meta property="og:description" content="Javascript异步-Promise概念 Promise对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值。  语法12// Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和reject()，一个表示成功的回调，一个表示失败的回调。new Promise( function(resolv">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-24T07:37:35.746Z">
+<meta property="og:updated_time" content="2018-11-24T07:40:53.352Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript异步-Promise">
-<meta name="twitter:description" content="Javascript异步-Promise概念 Promise对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值。  语法1new Promise( function(resolve, reject) &amp;#123;...&amp;#125; /* Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和rej">
+<meta name="twitter:description" content="Javascript异步-Promise概念 Promise对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值。  语法12// Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和reject()，一个表示成功的回调，一个表示失败的回调。new Promise( function(resolv">
 
 
 
@@ -426,7 +426,7 @@
         <h1 id="Javascript异步-Promise"><a href="#Javascript异步-Promise" class="headerlink" title="Javascript异步-Promise"></a>Javascript异步-Promise</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><blockquote>
 <p>Promise对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值。</p>
 </blockquote>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>( <span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;...&#125; <span class="comment">/* Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和reject()，一个表示成功的回调，一个表示失败的回调。 */</span>  );</span><br></pre></td></tr></table></figure>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和reject()，一个表示成功的回调，一个表示失败的回调。</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>( <span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;...&#125; );</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>executor是带有 resolve 和 reject 两个参数的函数 。Promise构造函数执行时立即调用executor 函数， resolve 和 reject 两个函数作为参数传递给executor（executor 函数在Promise构造函数返回新建对象前被调用）。resolve 和 reject 函数被调用时，分别将promise的状态改为fulfilled（完成）或rejected（失败）。executor 内部通常会执行一些异步操作，一旦完成，可以调用resolve函数来将promise状态改成fulfilled，或者在发生错误时将它的状态改为rejected。<br>如果在executor函数中抛出一个错误，那么该promise 状态为rejected。executor函数的返回值被忽略。</p>
 </blockquote>
