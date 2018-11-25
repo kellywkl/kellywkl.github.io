@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Javascript,">
+  <meta name="keywords" content="Promise,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Javascript异步-Promise概念 Promise对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值。  语法12// Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和reject()，一个表示成功的回调，一个表示失败的回调。new Promise( function(resolv">
-<meta name="keywords" content="Javascript">
+<meta name="description" content="JavaScript异步-Promise概念 Promise对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值。  语法12// Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和reject()，一个表示成功的回调，一个表示失败的回调。new Promise( function(resolv">
+<meta name="keywords" content="Promise">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript异步-Promise">
-<meta property="og:url" content="https://kellyblog.site/2018/11/24/Javascript异步/index.html">
+<meta property="og:title" content="JavaScript异步-Promise">
+<meta property="og:url" content="https://kellyblog.site/2018/11/24/JavaScript异步-Promise/index.html">
 <meta property="og:site_name" content="kelly文档库">
-<meta property="og:description" content="Javascript异步-Promise概念 Promise对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值。  语法12// Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和reject()，一个表示成功的回调，一个表示失败的回调。new Promise( function(resolv">
+<meta property="og:description" content="JavaScript异步-Promise概念 Promise对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值。  语法12// Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和reject()，一个表示成功的回调，一个表示失败的回调。new Promise( function(resolv">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-24T07:40:53.352Z">
+<meta property="og:updated_time" content="2018-11-25T01:51:53.403Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript异步-Promise">
-<meta name="twitter:description" content="Javascript异步-Promise概念 Promise对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值。  语法12// Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和reject()，一个表示成功的回调，一个表示失败的回调。new Promise( function(resolv">
+<meta name="twitter:title" content="JavaScript异步-Promise">
+<meta name="twitter:description" content="JavaScript异步-Promise概念 Promise对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值。  语法12// Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和reject()，一个表示成功的回调，一个表示失败的回调。new Promise( function(resolv">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://kellyblog.site/2018/11/24/Javascript异步/">
+  <link rel="canonical" href="https://kellyblog.site/2018/11/24/JavaScript异步-Promise/">
 
 
 
 
 
-  <title>Javascript异步-Promise | kelly文档库</title>
+  <title>JavaScript异步-Promise | kelly文档库</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kellyblog.site/2018/11/24/Javascript异步/">
+    <link itemprop="mainEntityOfPage" href="https://kellyblog.site/2018/11/24/JavaScript异步-Promise/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kelly">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Javascript异步-Promise</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript异步-Promise</h1>
         
 
         <div class="post-meta">
@@ -355,8 +355,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -423,7 +423,7 @@
       
 
       
-        <h1 id="Javascript异步-Promise"><a href="#Javascript异步-Promise" class="headerlink" title="Javascript异步-Promise"></a>Javascript异步-Promise</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><blockquote>
+        <h1 id="JavaScript异步-Promise"><a href="#JavaScript异步-Promise" class="headerlink" title="JavaScript异步-Promise"></a>JavaScript异步-Promise</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><blockquote>
 <p>Promise对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值。</p>
 </blockquote>
 <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Promise构造函数只有一个参数，该参数是一个函数，被称作executor（执行器），executor有2个参数，分别是resolve()和reject()，一个表示成功的回调，一个表示失败的回调。</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>( <span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;...&#125; );</span><br></pre></td></tr></table></figure>
@@ -516,7 +516,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+            <a href="/tags/Promise/" rel="tag"># Promise</a>
           
         </div>
       
@@ -538,6 +538,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/25/JavaScript-箭头函数/" rel="prev" title="JavaScript-箭头函数">
+                JavaScript-箭头函数 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -616,7 +620,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -627,7 +631,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -638,7 +642,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -671,7 +675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Javascript异步-Promise"><span class="nav-number">1.</span> <span class="nav-text">Javascript异步-Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.2.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.3.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">1.4.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">1.5.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-all-iterable"><span class="nav-number">1.5.1.</span> <span class="nav-text">Promise.all(iterable)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-race-iterable"><span class="nav-number">1.5.2.</span> <span class="nav-text">Promise.race(iterable)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-reject-reason"><span class="nav-number">1.5.3.</span> <span class="nav-text">Promise.reject(reason)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-resolve-value"><span class="nav-number">1.5.4.</span> <span class="nav-text">Promise.resolve(value)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-原型"><span class="nav-number">1.6.</span> <span class="nav-text">Promise 原型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原型属性"><span class="nav-number">1.6.1.</span> <span class="nav-text">原型属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型方法"><span class="nav-number">1.6.2.</span> <span class="nav-text">原型方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-prototype-catch-onRejected"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">Promise.prototype.catch(onRejected)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-prototype-then-onFulfilled-onRejected"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">Promise.prototype.then(onFulfilled, onRejected)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-prototype-finally-onFinally"><span class="nav-number">1.6.2.3.</span> <span class="nav-text">Promise.prototype.finally(onFinally)</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript异步-Promise"><span class="nav-number">1.</span> <span class="nav-text">JavaScript异步-Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.2.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.3.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">1.4.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">1.5.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-all-iterable"><span class="nav-number">1.5.1.</span> <span class="nav-text">Promise.all(iterable)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-race-iterable"><span class="nav-number">1.5.2.</span> <span class="nav-text">Promise.race(iterable)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-reject-reason"><span class="nav-number">1.5.3.</span> <span class="nav-text">Promise.reject(reason)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-resolve-value"><span class="nav-number">1.5.4.</span> <span class="nav-text">Promise.resolve(value)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-原型"><span class="nav-number">1.6.</span> <span class="nav-text">Promise 原型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原型属性"><span class="nav-number">1.6.1.</span> <span class="nav-text">原型属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型方法"><span class="nav-number">1.6.2.</span> <span class="nav-text">原型方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-prototype-catch-onRejected"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">Promise.prototype.catch(onRejected)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-prototype-then-onFulfilled-onRejected"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">Promise.prototype.then(onFulfilled, onRejected)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-prototype-finally-onFinally"><span class="nav-number">1.6.2.3.</span> <span class="nav-text">Promise.prototype.finally(onFinally)</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -709,7 +713,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.9k</span>
+    <span title="Site words total count">14.2k</span>
   
 </div>
 
