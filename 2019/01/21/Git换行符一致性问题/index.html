@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="原型和闭包--执行上下文,">
+  <meta name="keywords" content="编码规范,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="JavaScript原型和闭包–执行上下文 什么是“执行上下文”（也叫做“执行上下文环境”）？暂且不下定义，先看一段代码：  123456789console.log(a);//报错：Uncaught ReferenceError: a is not defined(…)console.log(a);//输出：undefinedvar a;console.log(a);//输出：undefined">
-<meta name="keywords" content="原型和闭包--执行上下文">
+<meta name="description" content="不同操作系统下的换行   系统 换行方式 转义字符     Windows/Dos CRLF(回车符+换行符) \r\n   Linux/Unix LF(换行符) \n   MacOS CR(回车符) \r    解决方法 使用git bash，设置core.autocrlf和core.safecrlf（可不设置），建议设置autocrlf为input，safecrlf为true，同时设置你的编辑">
+<meta name="keywords" content="编码规范">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript原型和闭包--执行上下文">
-<meta property="og:url" content="https://kellyblog.site/2017/03/31/JavaScript原型和闭包--执行上下文/index.html">
+<meta property="og:title" content="Git换行符一致性问题">
+<meta property="og:url" content="https://kellyblog.site/2019/01/21/Git换行符一致性问题/index.html">
 <meta property="og:site_name" content="kelly文档库">
-<meta property="og:description" content="JavaScript原型和闭包–执行上下文 什么是“执行上下文”（也叫做“执行上下文环境”）？暂且不下定义，先看一段代码：  123456789console.log(a);//报错：Uncaught ReferenceError: a is not defined(…)console.log(a);//输出：undefinedvar a;console.log(a);//输出：undefined">
+<meta property="og:description" content="不同操作系统下的换行   系统 换行方式 转义字符     Windows/Dos CRLF(回车符+换行符) \r\n   Linux/Unix LF(换行符) \n   MacOS CR(回车符) \r    解决方法 使用git bash，设置core.autocrlf和core.safecrlf（可不设置），建议设置autocrlf为input，safecrlf为true，同时设置你的编辑">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-25T04:48:36.642Z">
+<meta property="og:updated_time" content="2019-04-21T02:04:21.665Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript原型和闭包--执行上下文">
-<meta name="twitter:description" content="JavaScript原型和闭包–执行上下文 什么是“执行上下文”（也叫做“执行上下文环境”）？暂且不下定义，先看一段代码：  123456789console.log(a);//报错：Uncaught ReferenceError: a is not defined(…)console.log(a);//输出：undefinedvar a;console.log(a);//输出：undefined">
+<meta name="twitter:title" content="Git换行符一致性问题">
+<meta name="twitter:description" content="不同操作系统下的换行   系统 换行方式 转义字符     Windows/Dos CRLF(回车符+换行符) \r\n   Linux/Unix LF(换行符) \n   MacOS CR(回车符) \r    解决方法 使用git bash，设置core.autocrlf和core.safecrlf（可不设置），建议设置autocrlf为input，safecrlf为true，同时设置你的编辑">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://kellyblog.site/2017/03/31/JavaScript原型和闭包--执行上下文/">
+  <link rel="canonical" href="https://kellyblog.site/2019/01/21/Git换行符一致性问题/">
 
 
 
 
 
-  <title>JavaScript原型和闭包--执行上下文 | kelly文档库</title>
+  <title>Git换行符一致性问题 | kelly文档库</title>
   
 
 
@@ -303,7 +303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kellyblog.site/2017/03/31/JavaScript原型和闭包--执行上下文/">
+    <link itemprop="mainEntityOfPage" href="https://kellyblog.site/2019/01/21/Git换行符一致性问题/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kelly">
@@ -320,7 +320,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript原型和闭包--执行上下文</h1>
+          <h1 class="post-title" itemprop="name headline">Git换行符一致性问题</h1>
         
 
         <div class="post-meta">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T13:27:00+08:00">
-                2017-03-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-21T20:43:02+08:00">
+                2019-01-21
               </time>
             
 
@@ -355,8 +355,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  478 字
+                  229 字
                 </span>
               
 
@@ -423,25 +423,49 @@
       
 
       
-        <h1 id="JavaScript原型和闭包–执行上下文"><a href="#JavaScript原型和闭包–执行上下文" class="headerlink" title="JavaScript原型和闭包–执行上下文"></a>JavaScript原型和闭包–执行上下文</h1><ol>
-<li>什么是“执行上下文”（也叫做“执行上下文环境”）？暂且不下定义，先看一段代码：</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//报错：Uncaught ReferenceError: a is not defined(…)</span></span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//输出：undefined</span></span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//输出：undefined  </span></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">相当于=》</span><br><span class="line"><span class="keyword">var</span> a;<span class="comment">//声明  默认值是undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line">a = <span class="number">10</span>;<span class="comment">//赋值    &lt;/code&gt;</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>需要注意代码注释中的两个名词——“函数表达式”和“函数声明”。虽然两者都很常用，但是这两者在“准备工作”时，却是两种待遇。</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(f1);     <span class="comment">//function f1()&#123;&#125;</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;&#125;;     <span class="comment">//函数声明</span></span><br><span class="line"><span class="built_in">console</span>.log(f2);         <span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">var</span> f2=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;     <span class="comment">//函数表达式&lt;/code&gt;</span></span><br></pre></td></tr></table></figure>
-<p>在“准备工作”中，对待函数表达式就像对待“ var a = 10 ”这样的变量一样，只是声明。而对待函数声明时，却把函数整个赋值了。<br>总结：“准备工作”中完成的工作有：</p>
-<ul>
-<li>变量、函数表达式–变量声明，默认赋值为undefined；</li>
-<li>this–赋值；</li>
-<li>函数声明–赋值；</li>
-</ul>
-<p>这三种数据的准备情况我们称之为“执行上下文”或者“执行上下文环境”。<br>其实，javascript在执行一个代码段之前，都会进行这些“准备工作”来生成执行上下文。<b>这个“代码段”其实分三种情况–全局代码，函数体，eval代码。</b></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=<span class="number">10</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);      <span class="comment">//a是自由变量</span></span><br><span class="line">  &#125;                     <span class="comment">//函数创建时，就确定了a要取值的作用域</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">f</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a=<span class="number">20</span>;</span><br><span class="line">    f();          <span class="comment">//打印“10”，而不是“20”</span></span><br><span class="line">  &#125;</span><br><span class="line">  bar(fn);</span><br></pre></td></tr></table></figure>
-<ol>
-<li><b>this</b> ：this的取值，分四种情况。（注意：在函数中this到底取何值，是在函数真正被调用执行的时候确定的，函数定义的时候确定不了。因为this的取值是执行上下文环境的一部分，每次调用函数，都会产生一个新的执行上下文环境。）</li>
-</ol>
+        <h2 id="不同操作系统下的换行"><a href="#不同操作系统下的换行" class="headerlink" title="不同操作系统下的换行"></a>不同操作系统下的换行</h2><table>
+<thead>
+<tr>
+<th>系统</th>
+<th style="text-align:right">换行方式</th>
+<th style="text-align:center">转义字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows/Dos</td>
+<td style="text-align:right">CRLF(回车符+换行符)</td>
+<td style="text-align:center">\r\n</td>
+</tr>
+<tr>
+<td>Linux/Unix</td>
+<td style="text-align:right">LF(换行符)</td>
+<td style="text-align:center">\n</td>
+</tr>
+<tr>
+<td>MacOS</td>
+<td style="text-align:right">CR(回车符)</td>
+<td style="text-align:center">\r</td>
+</tr>
+</tbody>
+</table>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><blockquote>
+<p>使用git bash，设置core.autocrlf和core.safecrlf（可不设置），建议设置autocrlf为input，safecrlf为true，同时设置你的编辑器的换行符为LF\n。<br>下面为参数说明，–global表示全局设置</p>
+</blockquote>
+<h3 id="autocrlf"><a href="#autocrlf" class="headerlink" title="autocrlf"></a>autocrlf</h3><p>1、提交时转换为LF，检出时转换为CRLF</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>2、提交时转换为LF，检出时不转换</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf input</span><br></pre></td></tr></table></figure>
+<p>3、提交检出均不转换</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h3 id="safecrlf"><a href="#safecrlf" class="headerlink" title="safecrlf"></a>safecrlf</h3><p>1、拒绝提交包含混合换行符的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>1、</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>2、允许提交包含混合换行符的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>3、提交包含混合换行符的文件时给出警告</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf warn</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -496,7 +520,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/原型和闭包-执行上下文/" rel="tag"># 原型和闭包--执行上下文</a>
+            <a href="/tags/编码规范/" rel="tag"># 编码规范</a>
           
         </div>
       
@@ -509,8 +533,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/18/hello-hexo/" rel="next" title="Welcome to hexo">
-                <i class="fa fa-chevron-left"></i> Welcome to hexo
+              <a href="/2018/11/25/JavaScript-箭头函数/" rel="next" title="JavaScript-箭头函数">
+                <i class="fa fa-chevron-left"></i> JavaScript-箭头函数
               </a>
             
           </div>
@@ -518,10 +542,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/31/JavaScript 数组方法对比/" rel="prev" title="JavaScript 数组方法对比">
-                JavaScript 数组方法对比 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -600,7 +620,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -611,7 +631,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -622,7 +642,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -655,7 +675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript原型和闭包–执行上下文"><span class="nav-number">1.</span> <span class="nav-text">JavaScript原型和闭包–执行上下文</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#不同操作系统下的换行"><span class="nav-number">1.</span> <span class="nav-text">不同操作系统下的换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法"><span class="nav-number">2.</span> <span class="nav-text">解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#autocrlf"><span class="nav-number">2.1.</span> <span class="nav-text">autocrlf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#safecrlf"><span class="nav-number">2.2.</span> <span class="nav-text">safecrlf</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -679,7 +699,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-snowflake-o"></i>
   </span>
@@ -693,7 +713,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.8k</span>
+    <span title="Site words total count">8.1k</span>
   
 </div>
 
