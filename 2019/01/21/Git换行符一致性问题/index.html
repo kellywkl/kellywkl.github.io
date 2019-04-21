@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="kelly文档库">
 <meta property="og:description" content="不同操作系统下的换行   系统 换行方式 转义字符     Windows/Dos CRLF(回车符+换行符) \r\n   Linux/Unix LF(换行符) \n   MacOS CR(回车符) \r    解决方法 使用git bash，设置core.autocrlf和core.safecrlf（可不设置），建议设置autocrlf为input，safecrlf为true，同时设置你的编辑">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-21T02:04:21.665Z">
+<meta property="og:updated_time" content="2019-04-21T02:09:30.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git换行符一致性问题">
 <meta name="twitter:description" content="不同操作系统下的换行   系统 换行方式 转义字符     Windows/Dos CRLF(回车符+换行符) \r\n   Linux/Unix LF(换行符) \n   MacOS CR(回车符) \r    解决方法 使用git bash，设置core.autocrlf和core.safecrlf（可不设置），建议设置autocrlf为input，safecrlf为true，同时设置你的编辑">
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  229 字
+                  246 字
                 </span>
               
 
@@ -460,10 +460,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <h3 id="safecrlf"><a href="#safecrlf" class="headerlink" title="safecrlf"></a>safecrlf</h3><p>1、拒绝提交包含混合换行符的文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>1、</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>2、允许提交包含混合换行符的文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>3、提交包含混合换行符的文件时给出警告</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf warn</span><br></pre></td></tr></table></figure>
 <p>3、提交包含混合换行符的文件时给出警告</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.safecrlf warn</span><br></pre></td></tr></table></figure>
 
